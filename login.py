@@ -10,7 +10,7 @@ driver = webdriver.Chrome\
 class Login():
     def test(self):
         driver.maximize_window()
-        baseUrl = "https://www.bongobd.com/bn/login?type=login"
+        baseUrl = "https://www.bongobd.com/"
 
         driver.implicitly_wait(10)
         driver.get(baseUrl)
@@ -18,6 +18,8 @@ class Login():
         parentHandle = driver.current_window_handle # find current window.
 
         try:
+            LoginClick = driver.find_element_by_xpath('//*[@id="content"]/div[1]/nav/div/div/div[2]/div[4]/ul/li[1]/a')
+            LoginClick.click()
 
             # Click LOGIN WITH PHONE
             phoneLogin = driver.find_element(By.ID, "regNext")
